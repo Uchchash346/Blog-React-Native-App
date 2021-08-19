@@ -29,7 +29,7 @@ function MyStack() {
       <Stack.Screen
         name="CreateUserScreen"
         component={CreateUserScreen}
-        options={{ title: "Create a New User" }}
+        options={{ title: "Create a New Blog" }}
       />
       <Stack.Screen
         name="UsersList"

@@ -11,27 +11,27 @@ import firebase from "../database/firebase";
 
 const CreateUserScreen = (props) => {
     const initalState = {
-        name: "",
-        email: "",
-        phone: "",
+        title: "",
+        blog: "",
+        // phone: "",
     };
 
     const [state, setState] = useState(initalState);
 
-    const handleChangeText = (value, name) => {
-        setState({ ...state, [name]: value });
+    const handleChangeText = (value, title) => {
+        setState({ ...state, [title]: value });
     };
 
-    const saveNewUser = async () => {
-        if (state.name === "") {
-            alert("please provide a name");
+    const saveNewBlog = async () => {
+        if (state.title === "") {
+            alert("please provide a title");
         } else {
 
             try {
                 await firebase.db.collection("users").add({
-                    name: state.name,
-                    email: state.email,
-                    phone: state.phone,
+                    title: state.title,
+                    blog: state.blog,
+                    // phone: state.phone,
                 });
 
                 props.navigation.navigate("UsersList");
@@ -43,37 +43,37 @@ const CreateUserScreen = (props) => {
 
     return (
         <ScrollView style={styles.container}>
-            {/* Name Input */}
+            {/* title Input */}
             <View style={styles.inputGroup}>
                 <TextInput
-                    placeholder="Name"
-                    onChangeText={(value) => handleChangeText(value, "name")}
-                    value={state.name}
+                    placeholder="Title"
+                    onChangeText={(value) => handleChangeText(value, "title")}
+                    value={state.title}
                 />
             </View>
 
-            {/* Email Input */}
+            {/* Blog Input */}
             <View style={styles.inputGroup}>
                 <TextInput
-                    placeholder="Email"
+                    placeholder="Blog"
                     multiline={true}
                     numberOfLines={4}
-                    onChangeText={(value) => handleChangeText(value, "email")}
-                    value={state.email}
+                    onChangeText={(value) => handleChangeText(value, "blog")}
+                    value={state.blog}
                 />
             </View>
 
             {/* Input */}
-            <View style={styles.inputGroup}>
+            {/* <View style={styles.inputGroup}>
                 <TextInput
                     placeholder="phone"
                     onChangeText={(value) => handleChangeText(value, "phone")}
                     value={state.phone}
                 />
-            </View>
+            </View> */}
 
             <View style={styles.button}>
-                <Button title="Save User" onPress={() => saveNewUser()} />
+                <Button title="Save Blog" onPress={() => saveNewBlog()} />
             </View>
         </ScrollView>
     );
