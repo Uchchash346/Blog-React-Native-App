@@ -12,7 +12,6 @@ const CreateBlogScreen = (props) => {
     const initialState = {
         title: "",
         blog: "",
-        // phone: "",
     };
 
     const [state, setState] = useState(initialState);
@@ -30,7 +29,6 @@ const CreateBlogScreen = (props) => {
                 await firebase.db.collection("blogs").add({
                     title: state.title,
                     blog: state.blog,
-                    // phone: state.phone,
                 });
 
                 props.navigation.navigate("BlogsList");
@@ -61,15 +59,6 @@ const CreateBlogScreen = (props) => {
                     value={state.blog}
                 />
             </View>
-
-            {/* Input */}
-            {/* <View style={styles.inputGroup}>
-                <TextInput
-                    placeholder="phone"
-                    onChangeText={(value) => handleChangeText(value, "phone")}
-                    value={state.phone}
-                />
-            </View> */}
 
             <View style={styles.button}>
                 <Button title="Save Blog" onPress={() => saveNewBlog()} />
