@@ -6,7 +6,6 @@ import {
     TextInput,
     ScrollView,
 } from "react-native";
-
 import firebase from "../database/firebase";
 
 const CreateBlogScreen = (props) => {
