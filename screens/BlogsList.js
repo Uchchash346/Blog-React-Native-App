@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-const UsersList = () => {
+const BlogsList = () => {
     return (
         <View>
             <Text>Users List</Text>
@@ -9,4 +9,4 @@ const UsersList = () => {
     )
 }
 
-export default UsersList
+export default BlogsList

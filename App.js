@@ -7,9 +7,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 // Components
-import CreateUserScreen from "./screens/CreateUserScreen";
-import UserDetailScreen from "./screens/UserDetailScreen";
-import UsersList from "./screens/UsersList";
+import CreateBlogScreen from "./screens/CreateBlogScreen";
+import BlogDetailScreen from "./screens/BlogDetailScreen";
+import BlogsList from "./screens/BlogsList";
 
 const Stack = createStackNavigator();
 
@@ -25,21 +25,21 @@ function MyStack() {
           fontWeight: "bold",
         },
       }}
-      >
+    >
       <Stack.Screen
-        name="CreateUserScreen"
-        component={CreateUserScreen}
+        name="CreateBlogScreen"
+        component={CreateBlogScreen}
         options={{ title: "Create a New Blog" }}
       />
       <Stack.Screen
-        name="UsersList"
-        component={UsersList}
-        options={{ title: "Users List" }}
+        name="BlogsList"
+        component={BlogsList}
+        options={{ title: "Blogs List" }}
       />
       <Stack.Screen
-        name="UserDetailScreen"
-        component={UserDetailScreen}
-        options={{ title: "User Detail" }}
+        name="BlogDetailScreen"
+        component={BlogDetailScreen}
+        options={{ title: "Blog Detail" }}
       />
     </Stack.Navigator>
   );

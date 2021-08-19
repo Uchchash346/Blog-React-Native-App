@@ -9,14 +9,14 @@ import {
 
 import firebase from "../database/firebase";
 
-const CreateUserScreen = (props) => {
-    const initalState = {
+const CreateBlogScreen = (props) => {
+    const initialState = {
         title: "",
         blog: "",
         // phone: "",
     };
 
-    const [state, setState] = useState(initalState);
+    const [state, setState] = useState(initialState);
 
     const handleChangeText = (value, title) => {
         setState({ ...state, [title]: value });
@@ -28,13 +28,13 @@ const CreateUserScreen = (props) => {
         } else {
 
             try {
-                await firebase.db.collection("users").add({
+                await firebase.db.collection("blogs").add({
                     title: state.title,
                     blog: state.blog,
                     // phone: state.phone,
                 });
 
-                props.navigation.navigate("UsersList");
+                props.navigation.navigate("BlogsList");
             } catch (error) {
                 console.log(error)
             }
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default CreateUserScreen;
+export default CreateBlogScreen;
